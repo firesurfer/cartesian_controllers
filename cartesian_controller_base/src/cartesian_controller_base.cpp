@@ -131,7 +131,7 @@ CartesianControllerBase::on_configure(const rclcpp_lifecycle::State & previous_s
   urdf::Model robot_model;
   KDL::Tree robot_tree;
 
-  m_robot_description = get_node()->get_parameter("robot_description").as_string();
+  m_robot_description = get_robot_description();
   if (m_robot_description.empty())
   {
     RCLCPP_ERROR(get_node()->get_logger(), "robot_description is empty");
